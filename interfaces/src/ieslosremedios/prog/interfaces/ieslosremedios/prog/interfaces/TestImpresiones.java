@@ -3,26 +3,44 @@ package ieslosremedios.prog.interfaces;
 public class TestImpresiones {
     public static void main(String[] args) {
 
-        Impresora a = new Impresora();
-        a.imprime;
+        Imprimible a = new Impresora();
+        a.imprime();
+        a.borrar();
+        a.imprime();
+        a.establecerContenido("Esto es un test");
+        a.imprime();
 
-        Impresora b = new Impresora();
-        b.borrar;
+        Imprimible b = new Impresora();
+        b.imprime();
+        b.borrar();
+        b.imprime();
+        b.establecerContenido("Esto es un test");
+        b.imprime();
 
-        Impresora c = new Impresora();
-        c.establecerContenido;
+        Imprimible c = new Impresora();
+        c.imprime();
+        c.borrar();
+        c.imprime();
+        c.establecerContenido("Esto es un test");
+        c.imprime();
 
         //Funciona porque se permite la implementación gracias a la flexibilidad de las interfaces
         Imprimible z = new Imprimible() {
+            @Override
+            public void establecerContenido(String contenido) {
+
+            }
+
+            @Override
+            public void borrar() {
+
+            }
+
             @Override
             public void imprime() {
 
             }
 
-            @Override
-            public String establecerContenido(String a) {
-                return null;
-            }
         };
     }
 }

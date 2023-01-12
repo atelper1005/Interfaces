@@ -1,7 +1,7 @@
 package ieslosremedios.prog.interfaces;
 
 public class Impresora implements Imprimible {
-    String pagina;
+    private String pagina;
 
     public Impresora() {
         pagina = Imprimible.TEXTO_POR_DEFECTO;
@@ -13,17 +13,12 @@ public class Impresora implements Imprimible {
     }
 
     @Override
-    public String establecerContenido(String a) {
-        return null;
-    }
-
-    @Override
-    public String establecerContenido() {
-        System.out.println("Esto es un test");
+    public void establecerContenido(String contenido) {
+        pagina = contenido;
     }
 
     @Override
     public void borrar() {
-        System.out.println("****");
+        pagina = "";
     }
 }
